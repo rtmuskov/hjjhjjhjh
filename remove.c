@@ -32,7 +32,7 @@ void fr(list *str) {
         temp = base -> next;
         free (base);
         base = temp;
-    }
+    }mj
     if (temp != NULL)
         free(temp);
     if (str != NULL)

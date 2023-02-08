@@ -53,10 +53,12 @@ list *last (list *str) {
     int len = 0;
     while (nbase != NULL) {
         if (base->element != ' ') {
-            str->len--;
-            base ->next=nbase->next;
-            nbase=nbase->next;
+            len++;
         }
+        else { len = 0;
+        }
+        base ->next=nbase->next;
+            nbase=nbase->next;
         if (base ->element == ' '){
             while (nbase->element != '\0'){
                 if (nbase->element == ' '){

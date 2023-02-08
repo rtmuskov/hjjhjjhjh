@@ -1,10 +1,12 @@
 # ninja log v5
-5	238	6975991462996781	CMakeFiles/untitled16.dir/remove.c.obj	e73d3cd24b6580ce
-5	331	6975955691734307	CMakeFiles/untitled16.dir/main.c.obj	7fe8e85578f63087
-34	783	6975925161844738	CMakeFiles/untitled16.dir/print.c.obj	14dbba475d7d0b2f
-33	412	6975938604606185	CMakeFiles/untitled16.dir/input.c.obj	ada15f3d505a9780
-239	750	6975991467983415	untitled16.exe	91c8f04499ab1c7d
-4	274	6975992435652253	CMakeFiles/untitled16.dir/remove.c.obj	e73d3cd24b6580ce
-276	836	6975992441222864	untitled16.exe	91c8f04499ab1c7d
-4	428	6975994004666446	CMakeFiles/untitled16.dir/remove.c.obj	e73d3cd24b6580ce
-429	998	6975994010331582	untitled16.exe	91c8f04499ab1c7d
+9	233	6973417716973271	CMakeFiles/untitled16.dir/remove.c.obj	e73d3cd24b6580ce
+0	258	6973417717272472	CMakeFiles/untitled16.dir/main.c.obj	7fe8e85578f63087
+234	326	6973417717986634	CMakeFiles/untitled16.dir/print.c.obj	14dbba475d7d0b2f
+4	267	6973429683821403	CMakeFiles/untitled16.dir/main.c.obj	7fe8e85578f63087
+23	287	6973429683901197	CMakeFiles/untitled16.dir/remove.c.obj	e73d3cd24b6580ce
+16	302	6973429684220340	CMakeFiles/untitled16.dir/input.c.obj	ada15f3d505a9780
+268	422	6973429685466996	CMakeFiles/untitled16.dir/print.c.obj	14dbba475d7d0b2f
+422	685	6973429688010199	untitled16.exe	91c8f04499ab1c7d
+3	167	6973430270302755	CMakeFiles/untitled16.dir/main.c.obj	7fe8e85578f63087
+11	168	6973430270282819	CMakeFiles/untitled16.dir/remove.c.obj	e73d3cd24b6580ce
+169	409	6973430272626539	untitled16.exe	91c8f04499ab1c7d

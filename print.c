@@ -14,4 +14,3 @@ void pr(list *str){
     }
     printf("\"\n");
 }
-

@@ -1,11 +1,8 @@
-//
-// Created by rtmus on 06.02.2023.
-//
-
 #include "input.h"
 #include "library.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "remove.h"
 list *input(list *str){
     l *el = (l*) malloc(sizeof(l));
     str->head = el;
@@ -22,5 +19,6 @@ list *input(list *str){
     }
     el->element = '\0';
     el->next = NULL;
+
     return str;
 }

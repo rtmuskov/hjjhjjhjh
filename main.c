@@ -10,7 +10,7 @@ int main() {
     list *str = (list*) malloc(sizeof(list));
     str = input(str);
     pr(str);
-    str = rmsp(str);
+
     str = change(str);
     str = rmsp(str);
     pr(str);

@@ -171,20 +171,22 @@ list *change (list *str) {
     l *nbase = str->head->next;
     l *base1 = str->head;
     l *nbase1 = str->head->next;
-
-    int len=0; int len1=0;
+    l *start;
+    l *end;
+    int len = 0;
+    int len1 = 0;
     while ((nbase != NULL)) {
         if (base->element == ' ') {
             while (nbase->element != '\0') {
                 if (nbase->element == ' ') {
-                    len=0;
+                    len = 0;
                     break;
                 }
                 base = base->next;
                 nbase = nbase->next;
                 len++;
 
-            }
+}
 
         } else {
             len = 0;
@@ -194,6 +196,7 @@ list *change (list *str) {
     }
     while (nbase1 != NULL) {
         if (base1->element == ' ') {
+            start = base1;
             while ((nbase1->element != ' ')) {
                 if (nbase1->element == '\0') {
                     break;
@@ -207,22 +210,81 @@ list *change (list *str) {
             len1 = 0;
         }
         if (len1 < len) {
-            for (int i = len1 + 1; i > 0; i--) {
-                str->head = str->head->next;
-                str->len--;
+            end = base1;
 
-
-            }
+            if (start != NULL) start->next = end;
         }
-        if(nbase1 == NULL) {
+
+        if (len1 >= len) {
+
+        }
+        if (nbase1 == NULL) {
             break;
         }
 
         base1 = base1->next;
         nbase1 = nbase1->next;
-        len1=0;
+        len1 = 0;
     }
-    str->head=str->head->next;
     return str;
+    }
 
+
+/*list *change(list *str) {
+    l *now = str->head->next;
+    l *prev = str->head;
+    l *word;
+    l *end;
+    int len_last = 0;
+    int len = 0;
+    while (now != NULL) {
+        if (prev->element == ' ') {
+            while (now->element != '\0') {
+                if (now->element == ' ') {
+                    len_last = 0;
+                    break;
+                }
+                prev = prev->next;
+                now = now->next;
+                len_last++;
+            }
+        } else {
+            prev = prev->next;
+            now = now->next;
+        }
+    }
+    now = str->head->next;
+    prev = str->head;
+    word =prev;
+    while (now != NULL) {
+        if (prev->element == ' ') {
+            word = prev;
+            while ((now->element != ' ')) {
+                if (now->element == '\0') {
+                    len = 0;
+                    break;
+                }
+                prev = prev->next;
+                now = now->next;
+                len++;
+            }
+
+            end = prev;
+
+        } else {
+            len = 0;
+        }
+        if (len < len_last) {
+            word->next = now;
+        }
+        if ((len>=len_last) && (now!=NULL)){
+            break;
+
+        }
+        prev = prev->next;
+        now = now->next;
+        len = 0;
+    }
+    return str;
 }
+ */

@@ -2,6 +2,7 @@
 // Created by rtmus on 06.02.2023.
 //
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 #include "remove.h"
 #include "library.h"
@@ -47,16 +48,18 @@ void fr(list *str) {
     return tmp;
 }
  */
-list *last (list *str) {
+/*list *last (list *str) {
     l *base = str ->head;
     l *nbase = str ->head ->next;
     int len = 0;
     while (nbase != NULL) {
-        if (base->element != ' ') {
-            str->len--;
-            base ->next=nbase->next;
-            nbase=nbase->next;
+        if (base->element != ' ' ) {
+            len++;
         }
+        else { len = 0;
+        }
+        base ->next=nbase->next;
+        nbase=nbase->next;
         if (base ->element == ' '){
             while (nbase->element != '\0'){
                 if (nbase->element == ' '){
@@ -84,60 +87,142 @@ list *last (list *str) {
             str -> len--;
             base ->next=nbase->next;
             nbase=nbase->next;
-*/
+
 
         }
 
     return str;
+*/
 
-
-}
-list *change  (list *str) {
+/*list *change  (list *str) {
     l *base = str->head;
     l *nbase = str->head->next;
     int len = 0;
     int len1 = 0;
     len = str->len;
     len1 = str->len;
-        while (nbase != NULL) {
-            if (base->element != ' ') {
-                base ->next=nbase->next;
-                nbase=nbase->next;
-            }
-            if (base ->element == ' '){
-                while (nbase->element != '\0'){
-                    if (nbase->element == ' '){
-                        break;
-                    }
-                    len++;
-                    base =base ->next;
-                    nbase = nbase->next;
-                }
-            }
-            base =base ->next;
+    while (nbase != NULL) {
+        if (base->element != ' ') {
+            base->next = nbase->next;
             nbase = nbase->next;
-    }
-        while (nbase != NULL) {
-            if (base->element != ' ') {
-                base ->next=nbase->next;
-                nbase=nbase->next;
-            }
-            if (base ->element == ' ') {
-                if (nbase->element == '\0') break;
-                while (nbase->element != ' ') {
-
-
-                    base = base->next;
-                    nbase = nbase->next;
-                }
-            }
-
-            base =base ->next;
-            nbase = nbase->next;
-
         }
+        if (base->element == ' ') {
+            while (nbase->element != '\0') {
+                if (nbase->element == ' ') {
+                    break;
+                }
+                len++;
+                base = base->next;
+                nbase = nbase->next;
+            }
+        }
+        base = base->next;
+        nbase = nbase->next;
+    }
+    while (nbase != NULL) {
+        if (base->element != ' ') {
+            base->next = nbase->next;
+            nbase = nbase->next;
+        }
+        if (base->element == ' ') {
+            if (nbase->element == '\0') break;
+            while (nbase->element != ' ') {
+
+
+                base = base->next;
+                nbase = nbase->next;
+            }
+        }
+
+        base = base->next;
+        nbase = nbase->next;
+
+    }
 
 
     return str;
+}
+ */
+    int last (list *str) {
+        l *base = str ->head;
+        l *nbase = str ->head ->next;
+        int len=0;
+        while (nbase != NULL) {
+            if (base->element == ' ') {
+                while (nbase->element != '\0') {
+                    if (nbase->element == ' ') {
+                        break;
+                    }
+                    base = base->next;
+                    nbase = nbase->next;
+                    len++;
+                }
+
+            } else {
+                len = 0;
+            }
+            base = base->next;
+            nbase = nbase->next;
+        }
+            return str;
+        }
+list *change (list *str) {
+    l *base = str->head;
+    l *nbase = str->head->next;
+    l *base1 = str->head;
+    l *nbase1 = str->head->next;
+
+    int len=0; int len1=0;
+    while ((nbase != NULL)) {
+        if (base->element == ' ') {
+            while (nbase->element != '\0') {
+                if (nbase->element == ' ') {
+                    len=0;
+                    break;
+                }
+                base = base->next;
+                nbase = nbase->next;
+                len++;
+
+            }
+
+        } else {
+            len = 0;
+        }
+        base = base->next;
+        nbase = nbase->next;
+    }
+    while (nbase1 != NULL) {
+        if (base1->element == ' ') {
+            while ((nbase1->element != ' ')) {
+                if (nbase1->element == '\0') {
+                    break;
+                }
+                base1 = base1->next;
+                nbase1 = nbase1->next;
+                len1++;
+            }
+
+        } else {
+            len1 = 0;
+        }
+        if (len1 < len) {
+            for (int i = len1 + 1; i > 0; i--) {
+                str->head = str->head->next;
+                str->len--;
 
 
+            }
+        }
+        if(nbase1 == NULL) {
+            break;
+        }
+
+        base1 = base1->next;
+        nbase1 = nbase1->next;
+        len1=0;
+    }
+    str->head=str->head->next;
+    return str;
+
+}

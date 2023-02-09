@@ -6,12 +6,13 @@
 #include "remove.h"
 
 int main() {
+    int len;
     list *str = (list*) malloc(sizeof(list));
     str = input(str);
     pr(str);
-    //str = change(str);
     str = rmsp(str);
-    str= last(str);
+    str = change(str);
+    str = rmsp(str);
     pr(str);
     fr(str);
     return 0;
